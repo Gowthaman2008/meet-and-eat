@@ -182,6 +182,8 @@
     50%{ transform:translate(-50%,-53%) scale(1.12); opacity:1; }
   }
 
+
+
   .hero-content { position:relative; z-index:2; text-align:center; padding:0 20px; }
   .hero-badge {
     display:inline-block; background:linear-gradient(135deg,var(--red),#ff4444);
@@ -195,7 +197,7 @@
   @keyframes badge-pop { from{opacity:0;transform:scale(0) rotate(-10deg)} to{opacity:1;transform:scale(1) rotate(0)} }
 
   .hero-title {
-    font-family:'Bangers',cursive; font-size:clamp(5rem,14vw,11rem);
+    font-family:'Bangers',cursive; font-size:clamp(3rem,7vw,5.5rem);
     line-height:.9; color:#fff; letter-spacing:5px;
     text-shadow:4px 4px 0 var(--red), 8px 8px 0 rgba(0,0,0,.6), 0 0 80px rgba(232,24,26,.5);
     animation:title-slide .9s .2s cubic-bezier(.34,1.56,.64,1) both;
@@ -756,18 +758,253 @@
     .nav-links a { color:#fff; padding:12px 16px; border-radius:10px; border:none; }
     .nav-links a:hover { background:rgba(232,24,26,.2); }
     .hamburger { display:flex; }
-    section { padding:70px 20px; }
+    section { padding:60px 16px; }
     .story-grid, .contact-wrap, .footer-top { grid-template-columns:1fr; }
     .footer-top { gap:30px; }
     .form-row { grid-template-columns:1fr; }
-    .hero-title { font-size:clamp(3.5rem,18vw,7rem); }
+    .hero-title { font-size: clamp(2.2rem, 13vw, 4rem); letter-spacing: 2px; }
+    #hero .hero-content > div img { width: 80px !important; height: 80px !important; }
+    .hero-badge { font-size: .78rem; padding: 6px 16px; margin-bottom: 14px; }
+    .hero-sub { font-size: 1rem; letter-spacing: 1px; margin: 12px 0 24px; }
+    .btn-primary, .btn-outline { font-size: .95rem; padding: 11px 26px; }
     .ty-box { padding:40px 30px; }
     .ty-title { font-size:2rem; }
     .cursor-dot, .cursor-ring { display:none; }
+
+
+
+    /* Hide scroll hint on mobile */
+    .hero-scroll-hint { display:none; }
+
+    /* Floating food — smaller & fewer on mobile */
+    .floating-food { font-size:1.6rem !important; filter:drop-shadow(0 0 8px rgba(232,24,26,.3)); }
+    .floating-food:nth-of-type(1){ top:12%; left:4%; font-size:1.8rem !important; }
+    .floating-food:nth-of-type(2){ top:12%; right:4%; font-size:1.6rem !important; }
+    .floating-food:nth-of-type(3){ bottom:8%; left:5%; font-size:1.5rem !important; }
+    .floating-food:nth-of-type(4){ bottom:10%; right:5%; font-size:1.8rem !important; }
+    /* Hide the two middle floating items on mobile to reduce clutter */
+    .floating-food:nth-of-type(5),
+    .floating-food:nth-of-type(6){ display:none; }
+
+    /* Menu — compact 2-column grid */
+    .menu-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+    .menu-card-img {
+      font-size: 2.2rem;
+      aspect-ratio: 3/2;
+      animation: none; /* disable float animation on mobile for perf */
+    }
+    .menu-card-body { padding: 10px 12px; }
+    .menu-card-body h3 { font-size: 1rem; margin-bottom: 4px; }
+    .menu-card-body p { font-size: .78rem; line-height: 1.4; margin-bottom: 10px; }
+    .price { font-size: 1.2rem; }
+    .menu-card-badge { font-size: .65rem; padding: 3px 8px; }
+
+    /* Menu category buttons — wrap nicely */
+    .menu-cats { gap: 8px; }
+    .menu-cat-btn { font-size: .85rem; padding: 7px 16px; }
+
+    /* Hero logo smaller on mobile */
+    #hero > div[style*="justify-content:center"] img { width:100px !important; height:100px !important; }
+
+    /* Stats bar tighter */
+    .stats-bar { gap: 24px; padding: 30px 16px; }
+    .stat-item .count-num { font-size: 2.4rem; }
+
+    /* ── STORY section ── */
+    .story-img-box {
+      font-size: 5rem;
+      max-width: 220px;
+      margin: 0 auto;
+    }
+    .story-img-box img { width: 80% !important; height: 80% !important; }
+    .story-badge-count {
+      width: 72px; height: 72px;
+      bottom: -12px; right: calc(50% - 110px - 12px);
+    }
+    .story-badge-count .num { font-size: 1.4rem; }
+    .story-badge-count .lbl { font-size: .58rem; }
+    .story-text p { font-size: .95rem; }
+    .highlight-pill { font-size: .8rem; padding: 6px 14px; }
+    .story-highlights { gap: 10px; }
+
+    /* ── WHY US section ── */
+    .why-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+    .why-card { padding: 22px 16px; border-radius: 16px; }
+    .why-icon { font-size: 2.2rem; margin-bottom: 12px; }
+    .why-card h3 { font-size: 1rem; margin-bottom: 6px; }
+    .why-card p { font-size: .78rem; line-height: 1.5; }
+
+    /* ── REVIEWS section ── */
+    .reviews-grid {
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+    .review-card { padding: 20px 18px; border-radius: 16px; }
+    .review-card::before { font-size: 5rem; top: -6px; left: 12px; }
+    .review-card p { font-size: .88rem; line-height: 1.6; margin-bottom: 14px; }
+    .reviewer-avatar { width: 38px; height: 38px; font-size: 1rem; }
+    .reviewer-name { font-size: .88rem; }
+    .reviewer-loc { font-size: .73rem; }
+    .stars { font-size: 1.1rem; margin-bottom: 8px; }
+
+    /* ── CONTACT section ── */
+    .info-item { padding: 14px; gap: 12px; border-radius: 12px; }
+    .info-icon { width: 38px; height: 38px; font-size: 1.1rem; border-radius: 10px; }
+    .info-text strong { font-size: .9rem; }
+    .info-text span { font-size: .82rem; }
+    .contact-info h3 { font-size: 1.5rem; margin-bottom: 20px; }
+
+    /* ── Section titles ── */
+    .section-title { font-size: clamp(1.8rem, 7vw, 2.8rem); margin-bottom: 32px; }
+  }
+
+  @media(max-width:400px){
+    .menu-grid { grid-template-columns: 1fr; gap: 12px; }
+    .menu-card-img { font-size: 3rem; aspect-ratio: 16/7; }
+  }
+
+  /* ══════════════════════════════════════
+     INTRO SCREEN
+  ══════════════════════════════════════ */
+  #intro {
+    position:fixed; inset:0; z-index:99999;
+    background:radial-gradient(ellipse at 50% 60%, #2d0000 0%, #1a0000 40%, #0a0a0a 100%);
+    display:flex; align-items:center; justify-content:center;
+    overflow:hidden;
+    transition:opacity .7s ease, visibility .7s ease;
+  }
+  #intro.hide { opacity:0; visibility:hidden; pointer-events:none; }
+
+  /* dark grain overlay */
+  #intro::before {
+    content:''; position:absolute; inset:0;
+    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.04'/%3E%3C/svg%3E");
+    pointer-events:none; opacity:.4;
+  }
+
+  /* pulsing glow behind centre */
+  #intro-glow {
+    position:absolute; width:500px; height:500px; border-radius:50%;
+    background:radial-gradient(circle, rgba(232,24,26,.45) 0%, transparent 70%);
+    top:50%; left:50%; transform:translate(-50%,-50%);
+    animation:intro-glow-pulse 2s ease-in-out infinite;
+    pointer-events:none;
+  }
+  @keyframes intro-glow-pulse {
+    0%,100%{ transform:translate(-50%,-50%) scale(1);   opacity:.6; }
+    50%    { transform:translate(-50%,-50%) scale(1.25); opacity:1; }
+  }
+
+  /* floating food items */
+  .intro-food {
+    position:absolute;
+    font-size:3.2rem;
+    opacity:0;
+    filter:drop-shadow(0 0 18px rgba(232,24,26,.55));
+    will-change:transform,opacity;
+    animation:intro-float-in var(--dur,1.2s) var(--delay,0s) cubic-bezier(.22,1.5,.6,1) forwards;
+  }
+  @keyframes intro-float-in {
+    0%  { transform:translate(var(--tx),var(--ty)) scale(.3) rotate(var(--rot)); opacity:0; }
+    60% { opacity:1; }
+    100%{ transform:translate(0,0) scale(1) rotate(0deg); opacity:1; }
+  }
+
+  /* converge — all items rush to centre and shrink away */
+  .intro-food.converge {
+    animation:intro-converge .7s ease-in forwards;
+  }
+  @keyframes intro-converge {
+    0%  { transform:translate(0,0) scale(1); opacity:1; }
+    100%{ transform:translate(var(--cx),var(--cy)) scale(0) rotate(30deg); opacity:0; }
+  }
+
+  /* brand name reveal */
+  #intro-brand {
+    position:absolute; top:50%; left:50%;
+    transform:translate(-50%,-50%) scale(.4);
+    opacity:0; pointer-events:none;
+    text-align:center;
+  }
+  #intro-brand.show {
+    animation:brand-pop .8s cubic-bezier(.22,1.4,.6,1) forwards;
+  }
+  @keyframes brand-pop {
+    0%  { opacity:0; transform:translate(-50%,-50%) scale(.4); }
+    60% { opacity:1; transform:translate(-50%,-50%) scale(1.08); }
+    100%{ opacity:1; transform:translate(-50%,-50%) scale(1); }
+  }
+  #intro-brand .b-title {
+    font-family:'Bangers',cursive;
+    font-size:clamp(4rem,16vw,9rem);
+    color:#fff; letter-spacing:8px; line-height:.9;
+    text-shadow:4px 4px 0 var(--red), 8px 8px 0 rgba(0,0,0,.5), 0 0 80px rgba(232,24,26,.7);
+  }
+  #intro-brand .b-title span { color:var(--yellow); text-shadow:4px 4px 0 #9a7500, 0 0 60px rgba(245,197,24,.6); }
+  #intro-brand .b-sub {
+    font-family:'Fredoka One',cursive;
+    font-size:clamp(.9rem,3vw,1.4rem);
+    color:rgba(255,255,255,.7); letter-spacing:4px; margin-top:10px;
+    animation:sub-fade 1s .3s ease both;
+    opacity:0;
+  }
+  @keyframes sub-fade { to{ opacity:1; } }
+  #intro-brand .b-line {
+    width:0; height:4px; margin:14px auto 0;
+    background:linear-gradient(90deg,var(--red),var(--yellow));
+    border-radius:2px;
+    animation:line-grow .8s .2s ease forwards;
+  }
+  @keyframes line-grow { to{ width:min(280px,60vw); } }
+
+  /* loading bar at bottom */
+  #intro-bar-wrap {
+    position:absolute; bottom:40px; left:50%;
+    transform:translateX(-50%);
+    width:min(260px,60vw); height:3px;
+    background:rgba(255,255,255,.1); border-radius:3px; overflow:hidden;
+  }
+  #intro-bar {
+    height:100%; width:0; border-radius:3px;
+    background:linear-gradient(90deg,var(--red),var(--yellow));
+    transition:width .1s linear;
   }
 </style>
 </head>
 <body>
+
+<!-- ══ INTRO SCREEN ══ -->
+<div id="intro">
+  <div id="intro-glow"></div>
+
+  <!-- Food items — positioned via inline style, animated via JS -->
+  <div class="intro-food" id="if1"  style="--tx:-42vw;--ty:-38vh;--rot:-25deg;--dur:1.1s;--delay:.1s">🍔</div>
+  <div class="intro-food" id="if2"  style="--tx:44vw;--ty:-35vh;--rot:20deg;--dur:1.2s;--delay:.2s">🍕</div>
+  <div class="intro-food" id="if3"  style="--tx:-46vw;--ty:36vh;--rot:15deg;--dur:1.15s;--delay:.3s">🌮</div>
+  <div class="intro-food" id="if4"  style="--tx:48vw;--ty:38vh;--rot:-18deg;--dur:1.1s;--delay:.25s">🍗</div>
+  <div class="intro-food" id="if5"  style="--tx:0vw;--ty:-50vh;--rot:10deg;--dur:1.0s;--delay:.15s">🍟</div>
+  <div class="intro-food" id="if6"  style="--tx:-50vw;--ty:0vh;--rot:-12deg;--dur:1.2s;--delay:.35s">🥪</div>
+  <div class="intro-food" id="if7"  style="--tx:50vw;--ty:5vh;--rot:22deg;--dur:1.1s;--delay:.4s">🌭</div>
+  <div class="intro-food" id="if8"  style="--tx:-20vw;--ty:50vh;--rot:-8deg;--dur:1.15s;--delay:.2s">🍦</div>
+  <div class="intro-food" id="if9"  style="--tx:22vw;--ty:52vh;--rot:14deg;--dur:1.0s;--delay:.3s">🥤</div>
+  <div class="intro-food" id="if10" style="--tx:-35vw;--ty:-50vh;--rot:-20deg;--dur:1.2s;--delay:.1s">🧆</div>
+
+  <!-- Brand name (hidden, shown after converge) -->
+  <div id="intro-brand">
+    <div class="b-title">MEAT<br><span>&amp;</span><br>EAT</div>
+    <div class="b-line"></div>
+    <div class="b-sub">BITE · SMILE · REPEAT</div>
+  </div>
+
+  <!-- progress bar -->
+  <div id="intro-bar-wrap"><div id="intro-bar"></div></div>
+</div>
 
 <!-- CUSTOM CURSOR -->
 <div class="cursor-dot" id="cursorDot"></div>
@@ -1389,6 +1626,161 @@ function closeTY() {
 document.getElementById('thankYouOverlay').addEventListener('click', function(e){
   if(e.target === this) closeTY();
 });
+
+/* ══════════════════════════════════════
+   INTRO ANIMATION
+══════════════════════════════════════ */
+(function runIntro(){
+  const intro   = document.getElementById('intro');
+  const brand   = document.getElementById('intro-brand');
+  const bar     = document.getElementById('intro-bar');
+  const foods   = document.querySelectorAll('.intro-food');
+  const total   = 3800;
+  let  progress = 0;
+
+  /* ── Web Audio sounds ── */
+  let ctx;
+  function getCtx(){
+    if(!ctx) ctx = new (window.AudioContext || window.webkitAudioContext)();
+    return ctx;
+  }
+
+  function playWhoosh(delay=0){
+    setTimeout(()=>{
+      try{
+        const c=getCtx(), buf=c.createBuffer(1,c.sampleRate*.35,c.sampleRate);
+        const d=buf.getChannelData(0);
+        for(let i=0;i<d.length;i++) d[i]=(Math.random()*2-1)*Math.pow(1-i/d.length,2);
+        const src=c.createBufferSource(), gain=c.createGain();
+        const bpf=c.createBiquadFilter(); bpf.type='bandpass'; bpf.frequency.value=900; bpf.Q.value=0.5;
+        src.buffer=buf; src.connect(bpf); bpf.connect(gain); gain.connect(c.destination);
+        gain.gain.setValueAtTime(.18,c.currentTime);
+        gain.gain.exponentialRampToValueAtTime(.001,c.currentTime+.35);
+        src.start();
+      }catch(e){}
+    }, delay);
+  }
+
+  function playPop(delay=0, freq=480){
+    setTimeout(()=>{
+      try{
+        const c=getCtx(), osc=c.createOscillator(), gain=c.createGain();
+        osc.type='sine'; osc.frequency.setValueAtTime(freq,c.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(freq*1.6,c.currentTime+.08);
+        osc.frequency.exponentialRampToValueAtTime(freq*.5,c.currentTime+.22);
+        gain.gain.setValueAtTime(.22,c.currentTime);
+        gain.gain.exponentialRampToValueAtTime(.001,c.currentTime+.22);
+        osc.connect(gain); gain.connect(c.destination);
+        osc.start(); osc.stop(c.currentTime+.22);
+      }catch(e){}
+    }, delay);
+  }
+
+  function playSwooshConverge(delay=0){
+    setTimeout(()=>{
+      try{
+        const c=getCtx(), buf=c.createBuffer(1,c.sampleRate*.5,c.sampleRate);
+        const d=buf.getChannelData(0);
+        for(let i=0;i<d.length;i++) d[i]=(Math.random()*2-1)*Math.pow(1-i/d.length,3);
+        const src=c.createBufferSource(), gain=c.createGain();
+        const hp=c.createBiquadFilter(); hp.type='highpass'; hp.frequency.value=400;
+        src.buffer=buf; src.connect(hp); hp.connect(gain); gain.connect(c.destination);
+        gain.gain.setValueAtTime(.28,c.currentTime);
+        gain.gain.exponentialRampToValueAtTime(.001,c.currentTime+.5);
+        src.playbackRate.value=1.4;
+        src.start();
+      }catch(e){}
+    }, delay);
+  }
+
+  function playBrandReveal(delay=0){
+    setTimeout(()=>{
+      try{
+        const c=getCtx();
+        // deep boom
+        const osc=c.createOscillator(), g1=c.createGain();
+        osc.type='sine'; osc.frequency.setValueAtTime(90,c.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(45,c.currentTime+.5);
+        g1.gain.setValueAtTime(.35,c.currentTime);
+        g1.gain.exponentialRampToValueAtTime(.001,c.currentTime+.5);
+        osc.connect(g1); g1.connect(c.destination);
+        osc.start(); osc.stop(c.currentTime+.5);
+        // bright shimmer
+        const osc2=c.createOscillator(), g2=c.createGain();
+        osc2.type='triangle'; osc2.frequency.setValueAtTime(880,c.currentTime+.05);
+        osc2.frequency.exponentialRampToValueAtTime(1400,c.currentTime+.4);
+        g2.gain.setValueAtTime(.12,c.currentTime+.05);
+        g2.gain.exponentialRampToValueAtTime(.001,c.currentTime+.5);
+        osc2.connect(g2); g2.connect(c.destination);
+        osc2.start(c.currentTime+.05); osc2.stop(c.currentTime+.5);
+      }catch(e){}
+    }, delay);
+  }
+
+  // Animate progress bar
+  const barStart = performance.now();
+  function tickBar(now){
+    const elapsed = now - barStart;
+    progress = Math.min(elapsed / total * 100, 100);
+    bar.style.width = progress + '%';
+    if(progress < 100) requestAnimationFrame(tickBar);
+  }
+  requestAnimationFrame(tickBar);
+
+  // Play whoosh sounds staggered as food flies in
+  foods.forEach((_,i) => playWhoosh(100 + i*80));
+
+  // Step 1 — food items float in via CSS
+  setTimeout(() => {
+    foods.forEach((f, i) => {
+      f.style.animation = 'none';
+      f.style.opacity   = '1';
+      f.style.transform = 'translate(0,0) scale(1) rotate(0deg)';
+      setTimeout(() => {
+        f.style.transition = 'none';
+        f.style.animation  = `intro-bob ${1.8 + i*0.15}s ${i*0.1}s ease-in-out infinite alternate`;
+      }, 50);
+    });
+    // small pop when food lands
+    playPop(0, 520);
+  }, 1450);
+
+  // Step 2 — converge to centre
+  setTimeout(() => {
+    playSwooshConverge(0);
+    const cx = window.innerWidth  / 2;
+    const cy = window.innerHeight / 2;
+    foods.forEach(f => {
+      const r   = f.getBoundingClientRect();
+      const dx  = cx - (r.left + r.width/2);
+      const dy  = cy - (r.top  + r.height/2);
+      f.style.setProperty('--cx', dx + 'px');
+      f.style.setProperty('--cy', dy + 'px');
+      f.style.animation = 'intro-converge .65s cubic-bezier(.6,0,.8,1) forwards';
+    });
+  }, 2200);
+
+  // Step 3 — brand reveal with boom + shimmer
+  setTimeout(() => {
+    playBrandReveal(0);
+    brand.classList.add('show');
+  }, 2750);
+
+  // Step 4 — fade out
+  setTimeout(() => {
+    intro.classList.add('hide');
+    document.body.style.overflow = '';
+  }, 3600);
+
+  document.body.style.overflow = 'hidden';
+})();
 </script>
+
+<style>
+  @keyframes intro-bob {
+    from { transform:translate(0,0) scale(1) rotate(-4deg); }
+    to   { transform:translate(0,-14px) scale(1.08) rotate(4deg); }
+  }
+</style>
 </body>
 </html>

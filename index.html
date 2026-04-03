@@ -1145,90 +1145,7 @@
     <button class="menu-cat-btn" onclick="filterMenu('drinks',this)">🥤 Drinks</button>
   </div>
   <div class="menu-grid" id="menuGrid">
-    <!-- Burgers -->
-    <div class="menu-card reveal reveal-delay-1" data-cat="burger">
-      <div class="menu-card-img">🍔<span class="menu-card-badge">⭐ BEST SELLER</span></div>
-      <div class="menu-card-body">
-        <h3>Classic Smash Burger</h3>
-        <p>Juicy smashed patty, cheddar, house sauce, pickles on brioche bun.</p>
-        <div class="menu-card-footer">
-          <span class="price">₹199</span>
-        </div>
-      </div>
-    </div>
-    <div class="menu-card reveal reveal-delay-2" data-cat="burger">
-      <div class="menu-card-img">🥩</div>
-      <div class="menu-card-body">
-        <h3>Double Meat Stack</h3>
-        <p>Double patties, smoky bacon, jalapeños, crispy onions.</p>
-        <div class="menu-card-footer">
-          <span class="price">₹299</span>
-        </div>
-      </div>
-    </div>
-    <!-- Chicken -->
-    <div class="menu-card reveal reveal-delay-1" data-cat="chicken">
-      <div class="menu-card-img">🍗<span class="menu-card-badge">🔥 SPICY</span></div>
-      <div class="menu-card-body">
-        <h3>Crispy Fried Chicken</h3>
-        <p>Secret spice blend, ultra-crispy skin, tender inside.</p>
-        <div class="menu-card-footer">
-          <span class="price">₹179</span>
-        </div>
-      </div>
-    </div>
-    <div class="menu-card reveal reveal-delay-2" data-cat="chicken">
-      <div class="menu-card-img">🌮</div>
-      <div class="menu-card-body">
-        <h3>Grilled Chicken Wrap</h3>
-        <p>Flame-grilled strips, garlic sauce, fresh veggies, warm tortilla.</p>
-        <div class="menu-card-footer">
-          <span class="price">₹159</span>
-        </div>
-      </div>
-    </div>
-    <!-- Sides -->
-    <div class="menu-card reveal reveal-delay-1" data-cat="sides">
-      <div class="menu-card-img">🍟</div>
-      <div class="menu-card-body">
-        <h3>Loaded Cheese Fries</h3>
-        <p>Golden fries topped with cheddar sauce, jalapeños and chives.</p>
-        <div class="menu-card-footer">
-          <span class="price">₹129</span>
-        </div>
-      </div>
-    </div>
-    <div class="menu-card reveal reveal-delay-2" data-cat="sides">
-      <div class="menu-card-img">🧅</div>
-      <div class="menu-card-body">
-        <h3>Onion Rings</h3>
-        <p>Thick-cut rings in a light, airy beer batter. Served with ranch.</p>
-        <div class="menu-card-footer">
-          <span class="price">₹99</span>
-        </div>
-      </div>
-    </div>
-    <!-- Drinks -->
-    <div class="menu-card reveal reveal-delay-1" data-cat="drinks">
-      <div class="menu-card-img">🥤</div>
-      <div class="menu-card-body">
-        <h3>Signature Milkshake</h3>
-        <p>Thick, creamy shakes in chocolate, vanilla or strawberry.</p>
-        <div class="menu-card-footer">
-          <span class="price">₹129</span>
-        </div>
-      </div>
-    </div>
-    <div class="menu-card reveal reveal-delay-2" data-cat="drinks">
-      <div class="menu-card-img">🧃</div>
-      <div class="menu-card-body">
-        <h3>Fresh Lemonade</h3>
-        <p>Squeezed daily, served chilled with a hint of mint.</p>
-        <div class="menu-card-footer">
-          <span class="price">₹79</span>
-        </div>
-      </div>
-    </div>
+    <!-- Hydrated via JavaScript from LocalStorage -->
   </div>
 </section>
 
@@ -1437,6 +1354,91 @@
 </a>
 
 <script>
+/* ── HYDRATE FROM LOCALSTORAGE (Database Mock) ── */
+document.addEventListener('DOMContentLoaded', () => {
+  // 1. Menu Items
+  const defaultMenuItems = [
+    { id:1, name:'Classic Smash Burger', cat:'burger', price:199, desc:'Juicy smashed patty, cheddar, house sauce, pickles on brioche bun.', emoji:'🍔', badge:'⭐ BEST SELLER', img:'' },
+    { id:2, name:'Double Meat Stack',    cat:'burger', price:299, desc:'Double patties, smoky bacon, jalapeños, crispy onions.', emoji:'🥩', badge:'', img:'' },
+    { id:3, name:'Crispy Fried Chicken', cat:'chicken', price:179, desc:'Secret spice blend, ultra-crispy skin, tender inside.', emoji:'🍗', badge:'🔥 SPICY', img:'' },
+    { id:4, name:'Grilled Chicken Wrap', cat:'chicken', price:159, desc:'Flame-grilled strips, garlic sauce, fresh veggies, warm tortilla.', emoji:'🌮', badge:'', img:'' },
+    { id:5, name:'Loaded Cheese Fries',  cat:'sides',   price:129, desc:'Golden fries topped with cheddar sauce, jalapeños and chives.', emoji:'🍟', badge:'', img:'' },
+    { id:6, name:'Onion Rings',          cat:'sides',   price:99,  desc:'Thick-cut rings in a light, airy beer batter. Served with ranch.', emoji:'🧅', badge:'', img:'' },
+    { id:7, name:'Signature Milkshake',  cat:'drinks',  price:129, desc:'Thick, creamy shakes in chocolate, vanilla or strawberry.', emoji:'🥤', badge:'', img:'' },
+    { id:8, name:'Fresh Lemonade',       cat:'drinks',  price:79,  desc:'Squeezed daily, served chilled with a hint of mint.', emoji:'🧃', badge:'', img:'' },
+  ];
+  const menuItems = JSON.parse(localStorage.getItem('meatAndEatMenu')) || defaultMenuItems;
+  const menuGrid = document.getElementById('menuGrid');
+  menuGrid.innerHTML = menuItems.map((m, i) => `
+    <div class="menu-card reveal" data-cat="${m.cat}">
+      <div class="menu-card-img">
+        ${m.img ? `<img src="${m.img}" alt="${m.name}" style="width:100%; height:100%; object-fit:cover;">` : m.emoji}
+        ${m.badge ? `<span class="menu-card-badge">${m.badge}</span>` : ''}
+      </div>
+      <div class="menu-card-body">
+        <h3>${m.name}</h3>
+        <p>${m.desc}</p>
+        <div class="menu-card-footer">
+          <span class="price">₹${m.price}</span>
+        </div>
+      </div>
+    </div>
+  `).join('');
+
+  // 2. Settings Info
+  const conf = JSON.parse(localStorage.getItem('meatAndEatSettings'));
+  if (conf) {
+    if (conf.phone) {
+      document.querySelectorAll('a[href^="tel:"]').forEach(e => {
+        e.href = 'tel:' + conf.phone.replace(/[^0-9+]/g, '');
+        e.textContent = conf.phone;
+      });
+      document.querySelectorAll('a[href^="https://wa.me/"]').forEach(e => {
+        e.href = 'https://wa.me/' + conf.phone.replace(/[^0-9]/g, '');
+      });
+    }
+    const addrSpans = document.querySelectorAll('.info-text span');
+    if (addrSpans.length > 0 && conf.address) addrSpans[0].innerHTML = conf.address.replace(/\n/g, '<br>');
+  }
+
+  // 3. Stats Config
+  const stats = JSON.parse(localStorage.getItem('meatAndEatStats'));
+  if (stats) {
+    const statEls = document.querySelectorAll('.count-num[data-target]');
+    if (statEls.length >= 4) {
+      statEls[0].dataset.target = stats.customers || "5000";
+      statEls[2].dataset.target = stats.years || "12";
+      statEls[3].dataset.target = stats.rating || "4.8";
+    }
+  }
+
+  // 4. Feature Toggles
+  const togglesState = JSON.parse(localStorage.getItem('meatAndEatToggles'));
+  if (togglesState) {
+    if (!togglesState.whatsapp) {
+      const waButton = document.querySelector('.wa-float');
+      if (waButton) waButton.style.display = 'none';
+    }
+    if (!togglesState.cursor) {
+      document.getElementById('cursorDot').style.display = 'none';
+      document.getElementById('cursorRing').style.display = 'none';
+      document.body.style.cursor = 'auto';
+    }
+    if (!togglesState.reviews) {
+      document.getElementById('reviews').style.display = 'none';
+    }
+    if (!togglesState.contact) {
+      document.getElementById('contact').style.display = 'none';
+    }
+    if (!togglesState.intro) {
+      document.getElementById('intro').style.display = 'none';
+      document.body.style.overflow = '';
+      const runIntroCode = document.getElementById('runIntro');
+      if (runIntroCode) runIntroCode.remove(); // Prevent intro from blocking
+    }
+  }
+});
+
 /* ── CUSTOM CURSOR ── */
 const dot = document.getElementById('cursorDot');
 const ring = document.getElementById('cursorRing');
@@ -1579,6 +1581,21 @@ function submitForm() {
     `📮 PIN: ${pin || 'N/A'}\n` +
     `💬 Message: ${msg || 'N/A'}`
   );
+
+  // Save to LocalStorage Orders for Admin Panel
+  const newOrder = {
+    name: fname + (lname ? ' ' + lname : ''),
+    city: city || 'Unknown',
+    date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
+    status: 'pending',
+    statusText: 'Pending'
+  };
+  let orders = JSON.parse(localStorage.getItem('meatAndEatOrders')) || [
+    { name: 'Ravi K.', city: 'Komarapalayam', date: 'Apr 2, 2026', status: 'done', statusText: 'Replied' },
+    { name: 'Arjun M.', city: 'Namakkal', date: 'Mar 30, 2026', status: 'pending', statusText: 'Pending' }
+  ];
+  orders.unshift(newOrder); // Add to top
+  localStorage.setItem('meatAndEatOrders', JSON.stringify(orders));
 
   // Open WhatsApp in background tab
   window.open(`https://wa.me/918220048884?text=${waMsg}`, '_blank');

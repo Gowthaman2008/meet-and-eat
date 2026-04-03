@@ -975,6 +975,15 @@
     background:linear-gradient(90deg,var(--red),var(--yellow));
     transition:width .1s linear;
   }
+
+  /* ══ FEATURE TOGGLE OVERRIDES (Robust CSS-Driven) ══ */
+  body.intro-off #intro { display: none !important; }
+  body.whatsapp-off .wa-float { display: none !important; }
+  body.cursor-off #cursorDot,
+  body.cursor-off #cursorRing { display: none !important; }
+  body.cursor-off { cursor: auto !important; }
+  body.reviews-off #reviews { display: none !important; }
+  body.contact-off #contact { display: none !important; }
 </style>
 </head>
 <body>
@@ -984,16 +993,16 @@
   <div id="intro-glow"></div>
 
   <!-- Food items — positioned via inline style, animated via JS -->
-  <div class="intro-food" id="if1"  style="--tx:-42vw;--ty:-38vh;--rot:-25deg;--dur:1.1s;--delay:.1s">🍔</div>
-  <div class="intro-food" id="if2"  style="--tx:44vw;--ty:-35vh;--rot:20deg;--dur:1.2s;--delay:.2s">🍕</div>
-  <div class="intro-food" id="if3"  style="--tx:-46vw;--ty:36vh;--rot:15deg;--dur:1.15s;--delay:.3s">🌮</div>
-  <div class="intro-food" id="if4"  style="--tx:48vw;--ty:38vh;--rot:-18deg;--dur:1.1s;--delay:.25s">🍗</div>
-  <div class="intro-food" id="if5"  style="--tx:0vw;--ty:-50vh;--rot:10deg;--dur:1.0s;--delay:.15s">🍟</div>
-  <div class="intro-food" id="if6"  style="--tx:-50vw;--ty:0vh;--rot:-12deg;--dur:1.2s;--delay:.35s">🥪</div>
-  <div class="intro-food" id="if7"  style="--tx:50vw;--ty:5vh;--rot:22deg;--dur:1.1s;--delay:.4s">🌭</div>
-  <div class="intro-food" id="if8"  style="--tx:-20vw;--ty:50vh;--rot:-8deg;--dur:1.15s;--delay:.2s">🍦</div>
-  <div class="intro-food" id="if9"  style="--tx:22vw;--ty:52vh;--rot:14deg;--dur:1.0s;--delay:.3s">🥤</div>
-  <div class="intro-food" id="if10" style="--tx:-35vw;--ty:-50vh;--rot:-20deg;--dur:1.2s;--delay:.1s">🧆</div>
+  <div class="intro-food" id="if1"  style="--tx:-42vw;--ty:-38vh;--rot:-25deg;--dur:1.1s;--delay:.1s">&#x1F354;</div>
+  <div class="intro-food" id="if2"  style="--tx:44vw;--ty:-35vh;--rot:20deg;--dur:1.2s;--delay:.2s">&#x1F355;</div>
+  <div class="intro-food" id="if3"  style="--tx:-46vw;--ty:36vh;--rot:15deg;--dur:1.15s;--delay:.3s">&#x1F32E;</div>
+  <div class="intro-food" id="if4"  style="--tx:48vw;--ty:38vh;--rot:-18deg;--dur:1.1s;--delay:.25s">&#x1F357;</div>
+  <div class="intro-food" id="if5"  style="--tx:0vw;--ty:-50vh;--rot:10deg;--dur:1.0s;--delay:.15s">&#x1F35F;</div>
+  <div class="intro-food" id="if6"  style="--tx:-50vw;--ty:0vh;--rot:-12deg;--dur:1.2s;--delay:.35s">&#x1F36A;</div>
+  <div class="intro-food" id="if7"  style="--tx:50vw;--ty:5vh;--rot:22deg;--dur:1.1s;--delay:.4s">&#x1F32D;</div>
+  <div class="intro-food" id="if8"  style="--tx:-20vw;--ty:50vh;--rot:-8deg;--dur:1.15s;--delay:.2s">&#x1F366;</div>
+  <div class="intro-food" id="if9"  style="--tx:22vw;--ty:52vh;--rot:14deg;--dur:1.0s;--delay:.3s">&#x1F964;</div>
+  <div class="intro-food" id="if10" style="--tx:-35vw;--ty:-50vh;--rot:-20deg;--dur:1.2s;--delay:.1s">&#x1F959;</div>
 
   <!-- Brand name (hidden, shown after converge) -->
   <div id="intro-brand">
@@ -1013,7 +1022,7 @@
 <!-- THANK YOU OVERLAY -->
 <div id="thankYouOverlay">
   <div class="ty-box" id="tyBox">
-    <span class="ty-emoji">🍔</span>
+    <span class="ty-emoji">&#x1F354;</span>
     <div class="ty-title">THANK YOU!</div>
     <div class="ty-sub">We'll get back to you shortly.<br><strong style="color:var(--yellow);">Your message has been sent! 🎉</strong></div>
     <button class="ty-close" onclick="closeTY()">Awesome! 🔥</button>
@@ -1028,11 +1037,11 @@
     <img src="logo-full.png" alt="Meat & Eat" style="height:40px; object-fit:contain; filter:drop-shadow(0 0 10px rgba(245,197,24,0.3));">
   </a>
   <ul class="nav-links" id="navLinks">
-    <li><a href="#story"><i>📖</i><span>About</span></a></li>
-    <li><a href="#menu"><i>🍔</i><span>Menu</span></a></li>
-    <li><a href="#why"><i>⭐</i><span>Why Us</span></a></li>
-    <li><a href="#reviews"><i>💬</i><span>Reviews</span></a></li>
-    <li><a href="#contact"><i>📞</i><span>Contact</span></a></li>
+    <li><a href="#story"><i>&#x1F4D6;</i><span>About</span></a></li>
+    <li><a href="#menu"><i>&#x1F354;</i><span>Menu</span></a></li>
+    <li><a href="#why"><i>&#x2B50;</i><span>Why Us</span></a></li>
+    <li><a href="#reviews"><i>&#x1F4AC;</i><span>Reviews</span></a></li>
+    <li><a href="#contact"><i>&#x1F4DE;</i><span>Contact</span></a></li>
   </ul>
   <div class="hamburger" id="hamburger" onclick="toggleMenu()">
     <span></span><span></span><span></span>
@@ -1045,14 +1054,14 @@
   <div class="hero-particles" id="heroParticles"></div>
   <div class="hero-flame"></div>
   <div class="hero-flame-2"></div>
-  <span class="floating-food">🍔</span>
-  <span class="floating-food">🍗</span>
-  <span class="floating-food">🌮</span>
-  <span class="floating-food">🔥</span>
+  <span class="floating-food">&#x1F354;</span>
+  <span class="floating-food">&#x1F357;</span>
+  <span class="floating-food">&#x1F32E;</span>
+  <span class="floating-food">&#x1F525;</span>
   <span class="floating-food">🌭</span>
   <span class="floating-food">🍕</span>
   <div class="hero-content">
-    <div class="hero-badge">🔥 GREAT TASTE • MADE SIMPLE</div>
+    <div class="hero-badge">&#x1F525; GREAT TASTE • MADE SIMPLE</div>
     <!-- Hero logo -->
     <div style="margin-bottom:20px; display:flex; justify-content:center;">
       <img src="logo-round.jpg" alt="Meat & Eat" style="width:140px;height:140px;border-radius:50%;object-fit:cover;animation:pulse-logo 2s infinite, wobble 6s ease-in-out infinite;border:4px solid var(--yellow);box-shadow:0 0 0 4px var(--red), 0 0 40px rgba(232,24,26,0.5);">
@@ -1137,12 +1146,9 @@
 <!-- MENU -->
 <section id="menu">
   <h2 class="section-title reveal">OUR <span>MENU</span></h2>
-  <div class="menu-cats reveal">
+  <div class="menu-cats reveal" id="menuCats">
+    <!-- Dynamically populated via generateCategoryFilters() -->
     <button class="menu-cat-btn active" onclick="filterMenu('all',this)">🍽️ All</button>
-    <button class="menu-cat-btn" onclick="filterMenu('burger',this)">🍔 Burgers</button>
-    <button class="menu-cat-btn" onclick="filterMenu('chicken',this)">🍗 Chicken</button>
-    <button class="menu-cat-btn" onclick="filterMenu('sides',this)">🍟 Sides</button>
-    <button class="menu-cat-btn" onclick="filterMenu('drinks',this)">🥤 Drinks</button>
   </div>
   <div class="menu-grid" id="menuGrid">
     <!-- Hydrated via JavaScript from LocalStorage -->
@@ -1353,103 +1359,201 @@
   </svg>
 </a>
 
+<!-- ══ FIREBASE SDK ══ -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-app.js";
+  import { getFirestore, collection, getDocs, addDoc, doc, onSnapshot, setDoc } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-firestore.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-analytics.js";
+  const firebaseConfig = {
+    apiKey: "AIzaSyAsPfl2PReDArhtwLKGx2APS8muvelSLgE",
+    authDomain: "meat-and-eat-66364.firebaseapp.com",
+    projectId: "meat-and-eat-66364",
+    storageBucket: "meat-and-eat-66364.firebasestorage.app",
+    messagingSenderId: "484951333553",
+    appId: "1:484951333553:web:bc91360f3c7a428d29a090",
+    measurementId: "G-Q5JMYNZM99"
+  };
+  const app = initializeApp(firebaseConfig);
+  getAnalytics(app);
+  const db = getFirestore(app);
+  window._db = db;
+  window._fs = { collection, getDocs, addDoc, doc, onSnapshot, setDoc };
+</script>
+
 <script>
-/* ── HYDRATE FROM LOCALSTORAGE (Database Mock) ── */
+/* ── LOAD FROM FIREBASE FIRESTORE (with localStorage fallback) ── */
+// IMMEDIATE CACHE CHECK (Prevents Intro Flicker)
+(function initCache() {
+  const t = JSON.parse(localStorage.getItem('meatAndEatToggles')) || {};
+  if (t.intro === false) {
+    document.body.classList.add('intro-off');
+    document.body.style.overflow = '';
+  }
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Menu Items
-  const defaultMenuItems = [
-    { id:1, name:'Classic Smash Burger', cat:'burger', price:199, desc:'Juicy smashed patty, cheddar, house sauce, pickles on brioche bun.', emoji:'🍔', badge:'⭐ BEST SELLER', img:'' },
-    { id:2, name:'Double Meat Stack',    cat:'burger', price:299, desc:'Double patties, smoky bacon, jalapeños, crispy onions.', emoji:'🥩', badge:'', img:'' },
-    { id:3, name:'Crispy Fried Chicken', cat:'chicken', price:179, desc:'Secret spice blend, ultra-crispy skin, tender inside.', emoji:'🍗', badge:'🔥 SPICY', img:'' },
-    { id:4, name:'Grilled Chicken Wrap', cat:'chicken', price:159, desc:'Flame-grilled strips, garlic sauce, fresh veggies, warm tortilla.', emoji:'🌮', badge:'', img:'' },
-    { id:5, name:'Loaded Cheese Fries',  cat:'sides',   price:129, desc:'Golden fries topped with cheddar sauce, jalapeños and chives.', emoji:'🍟', badge:'', img:'' },
-    { id:6, name:'Onion Rings',          cat:'sides',   price:99,  desc:'Thick-cut rings in a light, airy beer batter. Served with ranch.', emoji:'🧅', badge:'', img:'' },
-    { id:7, name:'Signature Milkshake',  cat:'drinks',  price:129, desc:'Thick, creamy shakes in chocolate, vanilla or strawberry.', emoji:'🥤', badge:'', img:'' },
-    { id:8, name:'Fresh Lemonade',       cat:'drinks',  price:79,  desc:'Squeezed daily, served chilled with a hint of mint.', emoji:'🧃', badge:'', img:'' },
+  const fdb = () => !!(window._db && window._fs);
+
+  // Default menu items (emoji via String.fromCodePoint — encoding-safe)
+  const E = String.fromCodePoint;
+  const CAT_ICON = {
+    burger:  E(0x1F354), // 🍔
+    chicken: E(0x1F357), // 🍗
+    sides:   E(0x1F35F), // 🍟
+    drinks:  E(0x1F964), // 🥤
+  };
+
+  function generateCategoryFilters(cats) {
+    const container = document.getElementById('menuCats');
+    if (!container) return;
+
+    const allBtn = `<button class="menu-cat-btn active" onclick="filterMenu('all',this)">🍽️ All</button>`;
+    const catBtns = cats.map(c => {
+      const icon = CAT_ICON[c.id] || E(0x1F374); // Fallback to 🍴
+      return `<button class="menu-cat-btn" onclick="filterMenu('${c.id}',this)">${icon} ${c.name}</button>`;
+    }).join('');
+    
+    container.innerHTML = allBtn + catBtns;
+  }
+  const DEFAULT_MENU = [
+    { id:'1', name:'Classic Smash Burger', cat:'burger',  price:199, desc:'Juicy smashed patty, cheddar, house sauce, pickles on brioche bun.', badge:E(0x2B50)+' BEST SELLER', img:'' },
+    { id:'2', name:'Double Meat Stack',    cat:'burger',  price:299, desc:'Double patties, smoky bacon, jalapenos, crispy onions.', badge:'', img:'' },
+    { id:'3', name:'Crispy Fried Chicken', cat:'chicken', price:179, desc:'Secret spice blend, ultra-crispy skin, tender inside.', badge:E(0x1F525)+' SPICY', img:'' },
+    { id:'4', name:'Grilled Chicken Wrap', cat:'chicken', price:159, desc:'Flame-grilled strips, garlic sauce, fresh veggies, warm tortilla.', badge:'', img:'' },
+    { id:'5', name:'Loaded Cheese Fries',  cat:'sides',   price:129, desc:'Golden fries topped with cheddar sauce, jalapenos and chives.', badge:'', img:'' },
+    { id:'6', name:'Onion Rings',          cat:'sides',   price:99,  desc:'Thick-cut rings in a light, airy beer batter. Served with ranch.', badge:'', img:'' },
+    { id:'7', name:'Signature Milkshake',  cat:'drinks',  price:129, desc:'Thick, creamy shakes in chocolate, vanilla or strawberry.', badge:'', img:'' },
+    { id:'8', name:'Fresh Lemonade',       cat:'drinks',  price:79,  desc:'Squeezed daily, served chilled with a hint of mint.', badge:'', img:'' },
   ];
-  const menuItems = JSON.parse(localStorage.getItem('meatAndEatMenu')) || defaultMenuItems;
-  const menuGrid = document.getElementById('menuGrid');
-  menuGrid.innerHTML = menuItems.map((m, i) => `
-    <div class="menu-card reveal" data-cat="${m.cat}">
-      <div class="menu-card-img">
-        ${m.img ? `<img src="${m.img}" alt="${m.name}" style="width:100%; height:100%; object-fit:cover;">` : m.emoji}
-        ${m.badge ? `<span class="menu-card-badge">${m.badge}</span>` : ''}
-      </div>
-      <div class="menu-card-body">
-        <h3>${m.name}</h3>
-        <p>${m.desc}</p>
-        <div class="menu-card-footer">
-          <span class="price">₹${m.price}</span>
+
+  function renderMenuCards(items) {
+    const menuGrid = document.getElementById('menuGrid');
+    menuGrid.innerHTML = items.map(m => {
+      const icon = m.img
+        ? `<img src="${m.img}" alt="${m.name}" style="width:100%;height:100%;object-fit:cover;">`
+        : (CAT_ICON[m.cat] || String.fromCodePoint(0x1F374));
+      const badgeHtml = m.badge ? `<span class="menu-card-badge">${m.badge}</span>` : '';
+      return `
+      <div class="menu-card reveal" data-cat="${m.cat}">
+        <div class="menu-card-img">
+          ${icon}
+          ${badgeHtml}
         </div>
-      </div>
-    </div>
-  `).join('');
-
-  // 2. Settings Info
-  const conf = JSON.parse(localStorage.getItem('meatAndEatSettings'));
-  if (conf) {
-    if (conf.phone) {
-      document.querySelectorAll('a[href^="tel:"]').forEach(e => {
-        e.href = 'tel:' + conf.phone.replace(/[^0-9+]/g, '');
-        e.textContent = conf.phone;
+        <div class="menu-card-body">
+          <h3>${m.name}</h3>
+          <p>${m.desc}</p>
+          <div class="menu-card-footer">
+            <span class="price">&#8377;${m.price}</span>
+          </div>
+        </div>
+      </div>`;
+    }).join('');
+    setTimeout(() => {
+      document.querySelectorAll('#menuGrid .menu-card').forEach(el => {
+        if (typeof revObserver !== 'undefined') revObserver.observe(el);
+        else { el.style.opacity='1'; el.style.transform=''; }
       });
-      document.querySelectorAll('a[href^="https://wa.me/"]').forEach(e => {
-        e.href = 'https://wa.me/' + conf.phone.replace(/[^0-9]/g, '');
-      });
-    }
-    const addrSpans = document.querySelectorAll('.info-text span');
-    if (addrSpans.length > 0 && conf.address) addrSpans[0].innerHTML = conf.address.replace(/\n/g, '<br>');
+    }, 50);
+
   }
 
-  // 3. Stats Config
-  const stats = JSON.parse(localStorage.getItem('meatAndEatStats'));
-  if (stats) {
-    const statEls = document.querySelectorAll('.count-num[data-target]');
-    if (statEls.length >= 4) {
-      statEls[0].dataset.target = stats.customers || "5000";
-      statEls[2].dataset.target = stats.years || "12";
-      statEls[3].dataset.target = stats.rating || "4.8";
+  function applySettings(conf, stats, togglesState) {
+    // Phone / WhatsApp
+    if (conf && conf.phone) {
+      document.querySelectorAll('a[href^="tel:"]').forEach(e => { e.href='tel:'+conf.phone.replace(/[^0-9+]/g,''); e.textContent=conf.phone; });
+      document.querySelectorAll('a[href^="https://wa.me/"]').forEach(e => { e.href='https://wa.me/'+conf.phone.replace(/[^0-9]/g,''); });
     }
-  }
+    // Stats counters
+    if (stats) {
+      const els = document.querySelectorAll('.count-num[data-target]');
+      if (els.length >= 4) {
+        if (stats.customers) els[0].dataset.target = stats.customers;
+        if (stats.years)     els[2].dataset.target = stats.years;
+        if (stats.rating)    els[3].dataset.target = stats.rating;
+        // Trigger re-run of counters if they haven't run yet or need update
+      }
+    }
+    // Feature toggles (Robust CSS-Driven)
+    if (togglesState) {
+      const t = togglesState;
+      const b = document.body;
+      
+      b.classList.toggle('intro-off',    t.intro === false);
+      b.classList.toggle('whatsapp-off', t.whatsapp === false);
+      b.classList.toggle('cursor-off',   t.cursor === false);
+      b.classList.toggle('reviews-off',  t.reviews === false);
+      b.classList.toggle('contact-off',  t.contact === false);
 
-  // 4. Feature Toggles
-  const togglesState = JSON.parse(localStorage.getItem('meatAndEatToggles'));
-  if (togglesState) {
-    if (!togglesState.whatsapp) {
-      const waButton = document.querySelector('.wa-float');
-      if (waButton) waButton.style.display = 'none';
-    }
-    if (!togglesState.cursor) {
-      document.getElementById('cursorDot').style.display = 'none';
-      document.getElementById('cursorRing').style.display = 'none';
-      document.body.style.cursor = 'auto';
-    }
-    if (!togglesState.reviews) {
-      document.getElementById('reviews').style.display = 'none';
-    }
-    if (!togglesState.contact) {
-      document.getElementById('contact').style.display = 'none';
-    }
-    if (!togglesState.intro) {
-      document.getElementById('intro').style.display = 'none';
-      document.body.style.overflow = '';
-      const runIntroCode = document.getElementById('runIntro');
-      if (runIntroCode) runIntroCode.remove(); // Prevent intro from blocking
+      // Cache for next load (flicker prevention)
+      localStorage.setItem('meatAndEatToggles', JSON.stringify(t));
+
+      // Extra safety for the intro animation (ensure overflow is restored)
+      if (t.intro === false) b.style.overflow = '';
     }
   }
 
-  // Ensure dynamic menu cards are visible. Delay slightly to ensure revObserver is defined.
-  setTimeout(() => {
-    const cards = document.querySelectorAll('#menuGrid .menu-card');
-    if (typeof revObserver !== 'undefined') {
-      cards.forEach(el => revObserver.observe(el));
-    } else {
-      // Fallback if observer fails: force visible
-      cards.forEach(c => { c.style.opacity = '1'; c.style.transform = ''; });
-    }
-  }, 50);
+  if (fdb()) {
+    const { collection, onSnapshot, doc } = window._fs;
+    const db = window._db;
 
+    // 1. Real-time categories listener
+    onSnapshot(collection(db, 'categories'), snap => {
+      const cats = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+      generateCategoryFilters(cats);
+    });
+
+    // 2. Real-time menu listener
+    onSnapshot(collection(db, 'menuItems'), snap => {
+      const items = snap.empty ? DEFAULT_MENU : snap.docs.map(d => ({ id: d.id, ...d.data() }));
+      renderMenuCards(items);
+    });
+
+    // 3. Settings Engine (Consolidated)
+    let conf = {}, stats = {}, togglesState = { intro:true, whatsapp:true, cursor:true, reviews:true, contact:true };
+    
+    onSnapshot(doc(db, 'settings', 'restaurantInfo'), snap => {
+      if(snap.exists()) conf = snap.data();
+      applySettings(conf, stats, togglesState);
+    });
+    onSnapshot(doc(db, 'settings', 'stats'), snap => {
+      if(snap.exists()) stats = snap.data();
+      applySettings(conf, stats, togglesState);
+    });
+    onSnapshot(doc(db, 'settings', 'toggles'), snap => {
+      if(snap.exists()) togglesState = snap.data();
+      applySettings(conf, stats, togglesState);
+    });
+
+    // 4. Activity Tracker (Analytics)
+    const todayStr = new Date().toISOString().split('T')[0];
+    const hitKey = `me_hit_${todayStr}`;
+    if (!sessionStorage.getItem(hitKey)) {
+      const { setDoc, increment } = window._fs;
+      setDoc(doc(db, 'analytics', todayStr), { hits: increment(1), date: Date.now() }, { merge: true })
+        .then(() => sessionStorage.setItem(hitKey, 'true'))
+        .catch(()=>{});
+    }
+
+    // 5. Presence Heartbeat
+    const sessionId = sessionStorage.getItem('me_session_id') || Math.random().toString(36).substring(2, 15);
+    sessionStorage.setItem('me_session_id', sessionId);
+    const { setDoc: sDoc } = window._fs;
+    const updatePresence = () => {
+      sDoc(doc(db, 'presence', sessionId), { lastSeen: Date.now() }, { merge: true }).catch(()=>{});
+    };
+    updatePresence();
+    setInterval(updatePresence, 30000);
+
+  } else {
+    // Fallback: localStorage
+    renderMenuCards(JSON.parse(localStorage.getItem('meatAndEatMenu')) || DEFAULT_MENU);
+    const conf         = JSON.parse(localStorage.getItem('meatAndEatSettings')) || {};
+    const stats        = JSON.parse(localStorage.getItem('meatAndEatStats'))    || {};
+    const togglesState = JSON.parse(localStorage.getItem('meatAndEatToggles')) || { intro:true, whatsapp:true, cursor:true, reviews:true, contact:true };
+    applySettings(conf, stats, togglesState);
+  }
 });
+
 
 /* ── CUSTOM CURSOR ── */
 const dot = document.getElementById('cursorDot');
@@ -1568,8 +1672,8 @@ window.addEventListener('scroll', () => {
   if(flame) flame.style.transform = `translate(-50%, calc(-50% + ${y*0.3}px))`;
 });
 
-/* ── FORM SUBMIT → WhatsApp + Thank You ── */
-function submitForm() {
+/* ── FORM SUBMIT → Firestore + WhatsApp + Thank You ── */
+async function submitForm() {
   const fname  = document.getElementById('fname').value.trim();
   const lname  = document.getElementById('lname').value.trim();
   const email  = document.getElementById('femail').value.trim();
@@ -1578,47 +1682,56 @@ function submitForm() {
   const pin    = document.getElementById('fpin').value.trim();
   const msg    = document.getElementById('fmsg').value.trim();
 
-  if(!fname && !phone && !msg){
+  if (!fname && !phone && !msg) {
     alert('Please fill in at least your name, phone and message.');
     return;
+  }
+
+  const contact = {
+    name: fname + (lname ? ' ' + lname : ''),
+    city: city || 'Unknown',
+    date: new Date().toLocaleDateString('en-US', { month:'short', day:'numeric', year:'numeric' }),
+    ts: Date.now(),
+    status: 'pending',
+    statusText: 'Pending',
+    email: email || '',
+    phone: phone || '',
+    pin: pin || '',
+    message: msg || ''
+  };
+
+  // Save to Firestore
+  if (window._db && window._fs) {
+    try {
+      const { collection, addDoc } = window._fs;
+      await addDoc(collection(window._db, 'contacts'), contact);
+    } catch(e) {
+      console.warn('Firestore contact save failed, using localStorage', e);
+      let orders = JSON.parse(localStorage.getItem('meatAndEatOrders')) || [];
+      orders.unshift(contact);
+      localStorage.setItem('meatAndEatOrders', JSON.stringify(orders));
+    }
+  } else {
+    // localStorage fallback
+    let orders = JSON.parse(localStorage.getItem('meatAndEatOrders')) || [];
+    orders.unshift(contact);
+    localStorage.setItem('meatAndEatOrders', JSON.stringify(orders));
   }
 
   // Build WhatsApp message
   const waMsg = encodeURIComponent(
     `🍔 *New Contact from Meat & Eat Website*\n\n` +
-    `👤 Name: ${fname} ${lname}\n` +
+    `👤 Name: ${contact.name}\n` +
     `📧 Email: ${email || 'N/A'}\n` +
     `📞 Phone: ${phone || 'N/A'}\n` +
     `🏙️ City: ${city || 'N/A'}\n` +
     `📮 PIN: ${pin || 'N/A'}\n` +
     `💬 Message: ${msg || 'N/A'}`
   );
-
-  // Save to LocalStorage Orders for Admin Panel
-  const newOrder = {
-    name: fname + (lname ? ' ' + lname : ''),
-    city: city || 'Unknown',
-    date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
-    status: 'pending',
-    statusText: 'Pending'
-  };
-  let orders = JSON.parse(localStorage.getItem('meatAndEatOrders')) || [
-    { name: 'Ravi K.', city: 'Komarapalayam', date: 'Apr 2, 2026', status: 'done', statusText: 'Replied' },
-    { name: 'Arjun M.', city: 'Namakkal', date: 'Mar 30, 2026', status: 'pending', statusText: 'Pending' }
-  ];
-  orders.unshift(newOrder); // Add to top
-  localStorage.setItem('meatAndEatOrders', JSON.stringify(orders));
-
-  // Open WhatsApp in background tab
   window.open(`https://wa.me/918220048884?text=${waMsg}`, '_blank');
 
-  // Show Thank You animation
   showTY();
-
-  // Reset form
-  ['fname','lname','femail','fphone','fcity','fpin','fmsg'].forEach(id => {
-    document.getElementById(id).value = '';
-  });
+  ['fname','lname','femail','fphone','fcity','fpin','fmsg'].forEach(id => { document.getElementById(id).value = ''; });
 }
 
 function showTY() {
@@ -1658,8 +1771,11 @@ document.getElementById('thankYouOverlay').addEventListener('click', function(e)
 
 /* ══════════════════════════════════════
    INTRO ANIMATION
+   (Silenced and skipped if intro-off is present)
 ══════════════════════════════════════ */
 (function runIntro(){
+  if (document.body.classList.contains('intro-off')) return;
+
   const intro   = document.getElementById('intro');
   const brand   = document.getElementById('intro-brand');
   const bar     = document.getElementById('intro-bar');
@@ -1667,7 +1783,6 @@ document.getElementById('thankYouOverlay').addEventListener('click', function(e)
   const total   = 3800;
   let  progress = 0;
 
-  /* ── Web Audio sounds ── */
   let ctx;
   function getCtx(){
     if(!ctx) ctx = new (window.AudioContext || window.webkitAudioContext)();
@@ -1675,8 +1790,10 @@ document.getElementById('thankYouOverlay').addEventListener('click', function(e)
   }
 
   function playWhoosh(delay=0){
+    if (document.body.classList.contains('intro-off')) return;
     setTimeout(()=>{
       try{
+        if (document.body.classList.contains('intro-off')) return;
         const c=getCtx(), buf=c.createBuffer(1,c.sampleRate*.35,c.sampleRate);
         const d=buf.getChannelData(0);
         for(let i=0;i<d.length;i++) d[i]=(Math.random()*2-1)*Math.pow(1-i/d.length,2);
@@ -1691,8 +1808,10 @@ document.getElementById('thankYouOverlay').addEventListener('click', function(e)
   }
 
   function playPop(delay=0, freq=480){
+    if (document.body.classList.contains('intro-off')) return;
     setTimeout(()=>{
       try{
+        if (document.body.classList.contains('intro-off')) return;
         const c=getCtx(), osc=c.createOscillator(), gain=c.createGain();
         osc.type='sine'; osc.frequency.setValueAtTime(freq,c.currentTime);
         osc.frequency.exponentialRampToValueAtTime(freq*1.6,c.currentTime+.08);
@@ -1706,8 +1825,10 @@ document.getElementById('thankYouOverlay').addEventListener('click', function(e)
   }
 
   function playSwooshConverge(delay=0){
+    if (document.body.classList.contains('intro-off')) return;
     setTimeout(()=>{
       try{
+        if (document.body.classList.contains('intro-off')) return;
         const c=getCtx(), buf=c.createBuffer(1,c.sampleRate*.5,c.sampleRate);
         const d=buf.getChannelData(0);
         for(let i=0;i<d.length;i++) d[i]=(Math.random()*2-1)*Math.pow(1-i/d.length,3);
@@ -1723,8 +1844,10 @@ document.getElementById('thankYouOverlay').addEventListener('click', function(e)
   }
 
   function playBrandReveal(delay=0){
+    if (document.body.classList.contains('intro-off')) return;
     setTimeout(()=>{
       try{
+        if (document.body.classList.contains('intro-off')) return;
         const c=getCtx();
         // deep boom
         const osc=c.createOscillator(), g1=c.createGain();

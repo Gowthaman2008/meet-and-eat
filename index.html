@@ -1437,6 +1437,18 @@ document.addEventListener('DOMContentLoaded', () => {
       if (runIntroCode) runIntroCode.remove(); // Prevent intro from blocking
     }
   }
+
+  // Ensure dynamic menu cards are visible. Delay slightly to ensure revObserver is defined.
+  setTimeout(() => {
+    const cards = document.querySelectorAll('#menuGrid .menu-card');
+    if (typeof revObserver !== 'undefined') {
+      cards.forEach(el => revObserver.observe(el));
+    } else {
+      // Fallback if observer fails: force visible
+      cards.forEach(c => { c.style.opacity = '1'; c.style.transform = ''; });
+    }
+  }, 50);
+
 });
 
 /* ── CUSTOM CURSOR ── */
